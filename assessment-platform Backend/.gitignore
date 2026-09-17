@@ -1,0 +1,25 @@
+# Compiled output
+target/
+
+# IDE files
+.idea/
+*.iml
+.vscode/
+*.classpath
+*.project
+*.settings/
+
+# Maven wrapper downloaded files
+.mvn/wrapper/maven-wrapper.jar
+
+# Environment / secrets – NEVER commit these
+.env
+*.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
