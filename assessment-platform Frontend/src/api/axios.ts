@@ -16,11 +16,12 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
-// Global 401 handler — clear storage and redirect to login
+// Global 401 handler — clear storage and redirect to login (except for auth endpoints like login/register)
 api.interceptors.response.use(
   (response) => response,
   (error) => {
-    if (error.response?.status === 401) {
+    const isAuthEndpoint = error.config?.url?.includes('/api/auth/');
+    if (error.response?.status === 401 && !isAuthEndpoint) {
       localStorage.removeItem('jwt_token');
       localStorage.removeItem('auth_user');
       window.location.href = '/login';
