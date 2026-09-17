@@ -43,6 +43,12 @@ public class GlobalExceptionHandler {
         return buildResponse(HttpStatus.FORBIDDEN, ex.getMessage(), request);
     }
 
+    @ExceptionHandler({org.springframework.security.authentication.BadCredentialsException.class, org.springframework.security.core.userdetails.UsernameNotFoundException.class})
+    public ResponseEntity<ErrorResponse> handleBadCredentials(
+            Exception ex, HttpServletRequest request) {
+        return buildResponse(HttpStatus.UNAUTHORIZED, "Invalid username or password", request);
+    }
+
     @ExceptionHandler(AssessmentAlreadySubmittedException.class)
     public ResponseEntity<ErrorResponse> handleAlreadySubmitted(
             AssessmentAlreadySubmittedException ex, HttpServletRequest request) {
