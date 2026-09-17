@@ -1,5 +1,8 @@
 # AssessIQ – Online MCQ Assessment Platform
 
+[![Live Demo](https://img.shields.io/badge/Netlify-Live_Demo-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://assessetmentiq.netlify.app)
+[![Backend API](https://img.shields.io/badge/Render-Backend_API-46E3B7?style=for-the-badge&logo=render&logoColor=white)](https://assessment-platform-39co.onrender.com)
+
 AssessIQ is a full-stack online MCQ assessment platform built with Java, Spring Boot, React, TypeScript and MySQL.
 
 The platform provides separate experiences for teachers and students. Teachers can create and manage assessments, questions and options, publish tests and review student attempts. Students can browse available assessments, take tests, submit answers and view their results and attempt history.
@@ -379,6 +382,25 @@ GET    /api/student/attempts/{attemptId}/result
 
 ---
 
+## 🌐 Live Web Application & Demo Accounts
+
+- 🚀 **Live Demo URL**: [https://assessetmentiq.netlify.app](https://assessetmentiq.netlify.app)
+- ⚙️ **Production REST API**: [https://assessment-platform-39co.onrender.com](https://assessment-platform-39co.onrender.com)
+
+### 🔑 Pre-Configured Demo Credentials for Testing
+
+| Role | Username | Password | Access Level / Purpose |
+| :--- | :--- | :--- | :--- |
+| **Primary Admin Teacher** | `admin_teacher` | `teacher@123` | Full Assessment Management & Analytics |
+| **Secondary Teacher** | `teacher1` | `test123` | Assessment Management & Analytics |
+| **Student 1** | `Ace` | `test123` | Take Exams & View Results |
+| **Student 2** | `Rachel` | `test123` | Take Exams & View Results |
+| **Student 3** | `Charles` | `test123` | Take Exams & View Results |
+| **Student 4** | `student_alex` | `alex123` | Take Exams & View Results |
+| **Student 5** | `student1` | `password123` | Take Exams & View Results |
+
+---
+
 ## Demo Data
 
 The demo environment contains:
@@ -506,18 +528,22 @@ http://localhost:5173
 
 ## Deployment
 
-The project can be deployed using free-tier cloud services:
+The project is live and deployed using free-tier cloud services:
+
+- 🚀 **Frontend App (Netlify)**: [https://assessetmentiq.netlify.app](https://assessetmentiq.netlify.app)
+- ⚙️ **Backend REST API (Render)**: [https://assessment-platform-39co.onrender.com](https://assessment-platform-39co.onrender.com)
+- 🗄️ **Managed Database (Aiven MySQL)**: `mysql-2aae1e1e-assessiq.g.aivencloud.com:17042` (`assessment_system`)
 
 ```text
 React Frontend
       |
       v
-   Netlify
+   Netlify (https://assessetmentiq.netlify.app)
       |
    REST API
       |
       v
-Spring Boot Backend
+Spring Boot Backend (https://assessment-platform-39co.onrender.com)
       |
       v
     Render
@@ -526,7 +552,7 @@ Spring Boot Backend
     Aiven
       |
       v
-    MySQL
+    MySQL (assessment_system)
 ```
 
 Production credentials and secrets should be stored as environment variables and should never be committed to GitHub.
